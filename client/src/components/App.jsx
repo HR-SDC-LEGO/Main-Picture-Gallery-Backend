@@ -7,6 +7,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  render() {
+    return (
+      <div>App is running</div>
+    );
+  }
 }
 
 export default App;

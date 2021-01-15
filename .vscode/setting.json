@@ -10,8 +10,7 @@
   "javascript.suggest.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.validate.enable": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+}
 }
