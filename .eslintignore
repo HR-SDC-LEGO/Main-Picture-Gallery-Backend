@@ -3,3 +3,5 @@
 **/lib
 **/vendor
 **/*.min.js
+**/dbKey.js
+**/package-lock.json
