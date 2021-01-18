@@ -1,4 +1,7 @@
 node_modules
-dbKey.js
+config.js
 package-lock.json
-boundle.js
+bundle.js
+.DS_Store
+.AppleDouble
+.LSOverride

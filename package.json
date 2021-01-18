@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "testJest": "jest",
-    "build": "webpack --watch"
+    "build": "webpack --watch",
+    "server": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
