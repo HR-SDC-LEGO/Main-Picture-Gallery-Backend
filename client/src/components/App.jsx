@@ -1,5 +1,5 @@
 import React from 'react';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
@@ -9,6 +9,16 @@ class App extends React.Component {
     this.state = {
 
     };
+  }
+
+  componentDidMount() {
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:3000/lego/products',
+      success: (data) => {
+        console.log(data);
+      },
+    });
   }
 
   render() {
