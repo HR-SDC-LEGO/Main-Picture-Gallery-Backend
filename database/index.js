@@ -7,28 +7,38 @@ connection.connect((err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('the connected to the db');
+    console.log('the connected to the database LEGO');
   }
 });
 
-const addToLEGO = (productName, productImage) => {
-  console.log(productName);
-  const qryString = `INSERT INTO products (product_name) VALUES ("${productName}")`;
-  const qryImg = `INSERT INTO images (product_imgae) VALUES("${productImage}")`;
-
-  connection.query(qryString, (err) => {
-    if (!err) {
-      connection.query(qryImg, (error) => {
-        if (error) {
-          throw err;
-        }
-      });
+const addProduct = (productName, callback) => {
+  const insertQury = `INSERT INTO products (product_name) VALUES ("${productName}")`;
+  connection.query(insertQury, (err, data) => {
+    if (err) {
+      callback(err);
     } else {
-      throw err;
+      callback(null, data);
     }
   });
 };
 
+const addImg = (img, callback) => {
+  const imgQuery = `INSERT INTO images (product_image) VALUES ("${img}")`;
+  connection.connect(imgQuery, (err, data) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
+};
+
+const getAll = () => {
+  //will get all from the db using a join table
+};
+
 module.exports = {
-  addToLEGO,
+  addImg,
+  addProduct,
+  getAll,
 };
