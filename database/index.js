@@ -22,9 +22,9 @@ const addProduct = (productName, callback) => {
   });
 };
 
-const addImg = (img, callback) => {
-  const imgQuery = `INSERT INTO images (product_image) VALUES ("${img}")`;
-  connection.connect(imgQuery, (err, data) => {
+const addImg = (img, id, callback) => {
+  const imgQuery = `INSERT INTO images (product_image, product_id) VALUES ("${img}", "${id}")`;
+  connection.query(imgQuery, (err, data) => {
     if (err) {
       callback(err);
     } else {
@@ -33,12 +33,29 @@ const addImg = (img, callback) => {
   });
 };
 
-const getAll = () => {
-  //will get all from the db using a join table
+const getImgs = (qry, callback) => {
+  connection.query('SELECT * FROM images', (err, data) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
+};
+
+const getProducts = (qry, callback) => {
+  connection.query('SELECT * FROM products', (err, data) => {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
 };
 
 module.exports = {
   addImg,
   addProduct,
-  getAll,
+  getProducts,
+  getImgs,
 };
