@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
@@ -13,14 +13,13 @@ class App extends React.Component {
 
   componentDidMount() {
     const productsReq = () => {
-      $.ajax({
-        method: 'GET',
-        url: '/lego/products',
-        success: (data) => {
-          console.log(data);
-          return '200';
-        },
-      });
+      // $.ajax({
+      //   method: 'GET',
+      //   url: '/lego/products',
+      //   success: (data) => {
+      //     console.log(data);
+      //   },
+      // });
     };
     productsReq();
     // we will make a post to the imgs end point, pictures are just hard coded into the right place.
