@@ -1,0 +1,11 @@
+.mainImage {
+  position: relative;
+  float: left;
+  border-color: blueviolet;
+  border-width: thick;
+  size: 40px;
+}
+
+.test{
+  padding-left: 200px;
+}
