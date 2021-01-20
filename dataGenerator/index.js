@@ -9,7 +9,7 @@ for (let i = 0; i < 100; i += 1) {
       console.log(err);
     } else {
       const id = productData.insertId;
-      const number = Math.floor(Math.random() * 20);
+      const number = Math.floor(Math.random() * 10);
       for (let imgs = 0; imgs < number; imgs += 1) {
         const productImage = faker.image.cats();
         addImg(productImage, id, (error) => {

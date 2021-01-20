@@ -8,7 +8,7 @@
     "build": "webpack --watch",
     "server": "nodemon server/index.js",
     "faker": "node ./dataGenerator/index.js",
-    "spinUpDB": "brew services start mysql@5.7",
+    "spin": "brew services start mysql@5.7",
     "stop": "brew services stop mysql@5.7"
   },
   "repository": {
