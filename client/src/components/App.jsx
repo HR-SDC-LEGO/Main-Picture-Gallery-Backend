@@ -1,34 +1,61 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable no-else-return */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import $ from 'jquery';
+import Current from './Current';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
     this.state = {
-
+      products: [],
+      images: [],
+      main: 0,
     };
+    this.getImages = this.getImages.bind(this);
+    this.getProductsList = this.getProductsList.bind(this);
   }
 
   componentDidMount() {
-    const productsReq = () => {
-      $.ajax({
-        method: 'GET',
-        url: '/lego/products',
-        success: (data) => {
-          console.log(data);
-        },
-      });
-    };
-    productsReq();
-    // we will make a post to the imgs end point, pictures are just hard coded into the right place.
+    this.getProductsList();
+  }
+
+  getProductsList() {
+    $.ajax({
+      method: 'GET',
+      url: '/lego/products',
+      success: (data) => {
+        this.setState({ products: JSON.parse(data) });
+      },
+      complete: () => {
+        this.getImages();
+      },
+    });
+  }
+
+  getImages(query = this.state.products[0].product_id) {
+    // console.log(query); // works here
+    $.ajax({
+      method: 'POST',
+      data: JSON.stringify(query),
+      url: '/lego/products/images',
+      success: (imagesData) => {
+        this.setState({ images: imagesData });
+      },
+    });
   }
 
   render() {
-    return (
-      <div>App is running</div>
-    );
+    if (this.state.images.length !== 0) {
+      return (
+        <div>
+          <Current main={this.state.images[this.state.main]} />
+        </div>
+      );
+    } else {
+      return 'loading...';
+    }
   }
 }
 

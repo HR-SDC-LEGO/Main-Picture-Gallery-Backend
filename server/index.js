@@ -15,15 +15,16 @@ app.use(bodyParser.json());
 app.get('/lego/products', (req, res) => {
   getProducts(null, (err, data) => {
     if (err) {
-      res.status(404).send(err);
+      res.status(400).send(err);
     } else {
       res.status(200).send(JSON.stringify(data));
     }
   });
 });
 
-app.get('/lego/product/imgs', (req, res) => {
-  getImgs(null, (err, data) => {
+app.post('/lego/products/images', (req, res) => {
+  // console.log('req receved', req.body);
+  getImgs(req.body, (err, data) => {
     if (err) {
       res.status(400).send(err);
     } else {
