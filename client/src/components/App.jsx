@@ -56,7 +56,7 @@ class App extends React.Component {
   changeMainPicture(e) {
     // we will get the product im  id at set that to the siplaying
     // we want to set the clicked item will change the url of the main
-    // console.log(e.target.src);
+    console.log(e.target);
     this.setState({ main: e.target.src });
   }
 
@@ -80,11 +80,13 @@ class App extends React.Component {
     }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
-      endingIndexForCarosel: endingIndexForCarosel + 1,
+      endingIndexForCarosel: endingIndexForCarosel - 1,
     });
   }
 
   render() {
+    console.log(this.state.startingIndexForImageCarosel, 'starting');
+    console.log(this.state.endingIndexForCarosel, 'ending');
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
