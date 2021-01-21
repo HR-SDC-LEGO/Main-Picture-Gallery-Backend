@@ -56,14 +56,14 @@ class App extends React.Component {
     this.setState({ main: e.target.src });
   }
 
-  // carouselUP () {
-  //   // this will change the amount id of pictures we render
-  // }
+  carouselUP () {
+    // this will change the amount id of pictures we render
+  }
 
-  // carouselDown() {
-  //   // this will change the amount id of pictures we render
-  // }
-  //
+  carouselDown() {
+    // this will change the amount id of pictures we render
+  }
+
   render() {
     if (this.state.images.length !== 0) {
       return (

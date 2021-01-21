@@ -8,13 +8,15 @@ import ImageListItem from './ImageListItem';
 const ImageList = ({ images, changeMainPicture }) => {
   return (
     <div className="ImageList">
+      <button>up</button>
       {
     images.map((item, index) => {
       return (
         <ImageListItem imgContainer={item} key={index} change={changeMainPicture} />
       );
     })
-    }
+      }
+      <button>down</button>
     </div>
   );
 };
