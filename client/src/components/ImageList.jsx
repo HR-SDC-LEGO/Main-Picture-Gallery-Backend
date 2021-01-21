@@ -5,10 +5,10 @@
 import React from 'react';
 import ImageListItem from './ImageListItem';
 
-const ImageList = ({ images, changeMainPicture }) => {
+const ImageList = ({ images, changeMainPicture, carouselDown, carouselUP }) => {
   return (
     <div className="ImageList">
-      <button>up</button>
+      <button type="button" onClick={carouselUP}>up</button>
       {
     images.map((item, index) => {
       return (
@@ -16,7 +16,7 @@ const ImageList = ({ images, changeMainPicture }) => {
       );
     })
       }
-      <button>down</button>
+      <button type="button" onClick={carouselDown}>down</button>
     </div>
   );
 };

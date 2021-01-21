@@ -6,7 +6,7 @@ import React from 'react';
 const Current = ({ main }) => {
   return (
     <div>
-      <button className="MainImageZoom">
+      <button type="button" className="MainImageZoom">
         <img className="MainImage" src={main} alt="product" />
       </button>
     </div>

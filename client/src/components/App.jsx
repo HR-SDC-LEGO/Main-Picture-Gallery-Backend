@@ -58,17 +58,25 @@ class App extends React.Component {
 
   carouselUP () {
     // this will change the amount id of pictures we render
+    alert('UP');
+
   }
 
   carouselDown() {
     // this will change the amount id of pictures we render
+    alert('DOWN');
   }
 
   render() {
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
-          <ImageList images={this.state.images} changeMainPicture={this.changeMainPicture} />
+          <ImageList
+            images={this.state.images}
+            changeMainPicture={this.changeMainPicture}
+            carouselUP={this.carouselUP}
+            carouselDown={this.carouselDown}
+          />
           <Current main={this.state.main} />
         </div>
       );
