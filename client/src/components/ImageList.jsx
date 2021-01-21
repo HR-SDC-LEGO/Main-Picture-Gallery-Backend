@@ -5,13 +5,13 @@
 import React from 'react';
 import ImageListItem from './ImageListItem';
 
-const ImageList = ({ images }) => {
+const ImageList = ({ images, changeMainPicture }) => {
   return (
     <div className="ImageList">
       {
     images.map((item, index) => {
       return (
-        <ImageListItem imgContainer={item} key={index} />
+        <ImageListItem imgContainer={item} key={index} change={changeMainPicture} />
       );
     })
     }
