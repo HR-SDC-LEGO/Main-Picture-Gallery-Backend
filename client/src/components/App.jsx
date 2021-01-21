@@ -14,6 +14,7 @@ class App extends React.Component {
       images: [],
       main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg', // index
       startingIndexForImageCarosel: 0,
+      endingIndexForCarosel: 7,
     };
 
     this.getImages = this.getImages.bind(this);
@@ -61,28 +62,29 @@ class App extends React.Component {
 
   carouselUP() {
     // this will change the amount id of pictures we render
-    const { images, startingIndexForImageCarosel } = this.state;
+    const { images, startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     if (images.length - 7 === startingIndexForImageCarosel) {
       return;
     }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel + 1,
+      endingIndexForCarosel: endingIndexForCarosel + 1,
     });
   }
 
   carouselDown() {
     // this will change the amount id of pictures we render
-    const { startingIndexForImageCarosel } = this.state;
+    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     if (startingIndexForImageCarosel === 0) {
       return;
     }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
+      endingIndexForCarosel: endingIndexForCarosel + 1,
     });
   }
 
   render() {
-    console.log(this.state.startingIndexForImageCarosel);
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
@@ -92,6 +94,7 @@ class App extends React.Component {
             carouselUP={this.carouselUP}
             carouselDown={this.carouselDown}
             startingIndexForImageCarosel={this.state.startingIndexForImageCarosel}
+            endingIndexForCarosel={this.state.endingIndexForCarosel}
           />
           <Current main={this.state.main} />
         </div>
