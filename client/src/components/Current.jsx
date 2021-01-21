@@ -5,7 +5,11 @@ import React from 'react';
 
 const Current = ({ main }) => {
   return (
-    <img className="MainImage" src={main} alt="product" />
+    <div>
+      <button className="MainImageZoom">
+        <img className="MainImage" src={main} alt="product" />
+      </button>
+    </div>
   );
 };
 
