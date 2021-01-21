@@ -70,13 +70,16 @@ class App extends React.Component {
   carouselDown() {
     // this will change the amount id of pictures we render
     const { startingIndexForImageCarosel } = this.state;
+    if (startingIndexForImageCarosel === 0) {
+      return;
+    }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
     });
   }
 
   render() {
-    console.log(this.state.startingIndexForImageCarosel, 'index for main img');
+    // console.log(this.state.startingIndexForImageCarosel);
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
