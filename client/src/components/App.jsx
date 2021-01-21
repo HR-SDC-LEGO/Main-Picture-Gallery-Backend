@@ -13,11 +13,14 @@ class App extends React.Component {
       products: [],
       images: [],
       main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg', // index
+      startingIndexForImageCarosel: 0,
     };
 
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
+    this.carouselDown = this.carouselDown.bind(this);
+    this.carouselUP = this.carouselUP.bind(this);
   }
 
   componentDidMount() {
@@ -56,18 +59,24 @@ class App extends React.Component {
     this.setState({ main: e.target.src });
   }
 
-  carouselUP () {
+  carouselUP() {
     // this will change the amount id of pictures we render
-    alert('UP');
-
+    const { startingIndexForImageCarosel } = this.state;
+    this.setState({
+      startingIndexForImageCarosel: startingIndexForImageCarosel + 1,
+    });
   }
 
   carouselDown() {
     // this will change the amount id of pictures we render
-    alert('DOWN');
+    const { startingIndexForImageCarosel } = this.state;
+    this.setState({
+      startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
+    });
   }
 
   render() {
+    console.log(this.state.startingIndexForImageCarosel, 'index for main img');
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
