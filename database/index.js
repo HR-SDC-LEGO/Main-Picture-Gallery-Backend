@@ -22,8 +22,8 @@ const addProduct = (productName, callback) => {
   });
 };
 
-const addImg = (img, id, callback) => {
-  const imgQuery = `INSERT INTO images (product_image, product_id) VALUES ("${img}", "${id}")`;
+const addImg = (img, id, imgId, callback) => {
+  const imgQuery = `INSERT INTO images (product_image, product_id, image_id) VALUES ("${img}", "${id}", "${imgId}")`;
   connection.query(imgQuery, (err, data) => {
     if (err) {
       callback(err);

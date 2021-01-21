@@ -23,7 +23,6 @@ app.get('/lego/products', (req, res) => {
 });
 
 app.post('/lego/products/images', (req, res) => {
-  // console.log('req receved', req.body);
   getImgs(req.body, (err, data) => {
     if (err) {
       res.status(400).send(err);

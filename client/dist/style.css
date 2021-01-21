@@ -1,11 +1,18 @@
-.mainImage {
-  position: relative;
-  float: left;
-  border-color: blueviolet;
-  border-width: thick;
-  size: 40px;
+.App{
+  display: flex;
+  width: 57.5rem;
+  justify-content: center;
 }
+.ImageList{
+  display: flex;
+  flex-direction: column;
+  width: 4rem;
+}
+.ImageListItem{
+  object-fit: contain;
+  height: 50px; /*might be a better solution? */
+}
+.MainImage{
+  object-fit: contain;
 
-.test{
-  padding-left: 200px;
 }

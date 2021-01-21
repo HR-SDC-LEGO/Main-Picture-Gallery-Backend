@@ -4,6 +4,7 @@
 import React from 'react';
 import $ from 'jquery';
 import Current from './Current';
+import ImageList from './ImageList';
 
 class App extends React.Component {
   constructor(props) {
@@ -49,7 +50,8 @@ class App extends React.Component {
   render() {
     if (this.state.images.length !== 0) {
       return (
-        <div>
+        <div className="App">
+          <ImageList images={this.state.images} />
           <Current main={this.state.images[this.state.main]} />
         </div>
       );

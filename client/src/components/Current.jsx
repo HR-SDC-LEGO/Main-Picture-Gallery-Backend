@@ -6,10 +6,7 @@ import React from 'react';
 const Current = ({ main }) => {
   const image = main.product_image;
   return (
-    <div className="test">
-      <img className="mainImage" src={image} alt="product" />
-    </div>
-
+    <img className="MainImage" src={image} alt="product" />
   );
 };
 
