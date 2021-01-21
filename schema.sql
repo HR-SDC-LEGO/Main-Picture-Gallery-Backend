@@ -11,6 +11,7 @@ create Table products (
 
 create table images (
   product_id INT,
+  image_id INT,
   FOREIGN KEY (product_id) REFERENCES products(product_id),
   product_image varchar(255)
 );
