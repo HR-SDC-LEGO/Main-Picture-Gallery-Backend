@@ -5,10 +5,8 @@
 import React from 'react';
 import ImageListItem from './ImageListItem';
 
-const ImageList = ({ images, changeMainPicture, carouselDown, carouselUP, startingIndexForImageCarosel }) => {
-  const end = startingIndexForImageCarosel + 7;
-  const start = startingIndexForImageCarosel;
-  const rangeOfRenderingCarosel = images.slice(start, end);
+const ImageList = ({ images, changeMainPicture, carouselDown, carouselUP, startingIndexForImageCarosel, endingIndexForCarosel }) => {
+  const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, endingIndexForCarosel);
   return (
     <div className="ImageList">
       <button type="button" onClick={carouselUP}>up</button>
