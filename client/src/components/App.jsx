@@ -61,7 +61,10 @@ class App extends React.Component {
 
   carouselUP() {
     // this will change the amount id of pictures we render
-    const { startingIndexForImageCarosel } = this.state;
+    const { images, startingIndexForImageCarosel } = this.state;
+    if (startingIndexForImageCarosel === 10) {
+      return;
+    }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel + 1,
     });
@@ -79,7 +82,7 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.startingIndexForImageCarosel);
+    console.log(this.state.startingIndexForImageCarosel);
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
