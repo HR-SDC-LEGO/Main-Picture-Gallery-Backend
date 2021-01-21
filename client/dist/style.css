@@ -14,5 +14,6 @@
 }
 .MainImage{
   object-fit: contain;
-
+  height: 4rem;
+  width: auto;
 }

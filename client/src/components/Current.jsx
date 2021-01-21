@@ -4,9 +4,8 @@
 import React from 'react';
 
 const Current = ({ main }) => {
-  const image = main.product_image;
   return (
-    <img className="MainImage" src={image} alt="product" />
+    <img className="MainImage" src={main} alt="product" />
   );
 };
 

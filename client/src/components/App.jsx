@@ -12,10 +12,12 @@ class App extends React.Component {
     this.state = {
       products: [],
       images: [],
-      main: 0,
+      main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg', // index
     };
+
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
+    this.changeMainPicture = this.changeMainPicture.bind(this);
   }
 
   componentDidMount() {
@@ -47,12 +49,27 @@ class App extends React.Component {
     });
   }
 
+  changeMainPicture(e) {
+    // we will get the product im  id at set that to the siplaying
+    // we want to set the clicked item will change the url of the main
+    // console.log(e.target.src);
+    this.setState({ main: e.target.src });
+  }
+
+  // carouselUP () {
+  //   // this will change the amount id of pictures we render
+  // }
+
+  // carouselDown() {
+  //   // this will change the amount id of pictures we render
+  // }
+  //
   render() {
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
-          <ImageList images={this.state.images} />
-          <Current main={this.state.images[this.state.main]} />
+          <ImageList images={this.state.images} changeMainPicture={this.changeMainPicture} />
+          <Current main={this.state.main} />
         </div>
       );
     } else {
