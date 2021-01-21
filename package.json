@@ -9,7 +9,9 @@
     "server": "nodemon server/index.js",
     "faker": "node ./dataGenerator/index.js",
     "spin": "brew services start mysql@5.7",
-    "stop": "brew services stop mysql@5.7"
+    "stop": "brew services stop mysql@5.7",
+    "mysql": "mysql -u root -p",
+    "mysqlFile": "mysql -u root -p < schema.sql"
   },
   "repository": {
     "type": "git",

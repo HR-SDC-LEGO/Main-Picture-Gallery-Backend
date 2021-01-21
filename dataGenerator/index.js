@@ -1,7 +1,7 @@
 const faker = require('faker');
 const { addImg, addProduct } = require('../database/index.js');
 
-for (let i = 0; i < 100; i += 1) {
+for (let i = 1; i < 100; i += 1) {
   const productName = faker.commerce.productName();
 
   addProduct(productName, (err, productData) => {

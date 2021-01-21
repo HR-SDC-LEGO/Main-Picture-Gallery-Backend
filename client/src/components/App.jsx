@@ -88,6 +88,7 @@ class App extends React.Component {
             changeMainPicture={this.changeMainPicture}
             carouselUP={this.carouselUP}
             carouselDown={this.carouselDown}
+            startingIndexForImageCarosel={this.state.startingIndexForImageCarosel}
           />
           <Current main={this.state.main} />
         </div>
