@@ -2,13 +2,14 @@
 /* eslint-disable arrow-body-style */
 
 import React from 'react';
+import './CurrentS.scss';
 
 const Current = ({ main }) => {
   return (
-    <div>
-      <button type="button" className="MainImageZoom">
+    <div className="Current">
+      <div className="MainImageZoom">
         <img className="MainImage" src={main} alt="product" />
-      </button>
+      </div>
     </div>
   );
 };

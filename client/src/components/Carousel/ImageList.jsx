@@ -4,6 +4,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import ImageListItem from './ImageListItem';
+import './ImageListS.scss';
 
 const ImageList = ({
   images, changeMainPicture, carouselDown, carouselUP, startingIndexForImageCarosel, endingIndexForCarosel,
