@@ -71,17 +71,17 @@ class ImageList extends React.Component {
   }
 
   render() {
-    const { images } = this.props;
+    const { images, selectedImageIndex } = this.props;
     const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, endingIndexForCarosel);
-
     return (
       <div className="ImageList">
         <button type="button" onClick={this.carouselUP}>up</button>
         {
       rangeOfRenderingCarosel.map((item, index) => {
+        const imageIndex = index + startingIndexForImageCarosel;
         return (
-          <ImageListItem imgContainer={item} key={index} handleChange={this.changeMainPicture} id={index} />
+          <ImageListItem imgContainer={item} key={imageIndex} handleChange={this.changeMainPicture} id={imageIndex} isSelected={selectedImageIndex === imageIndex} />
         );
       })
         }

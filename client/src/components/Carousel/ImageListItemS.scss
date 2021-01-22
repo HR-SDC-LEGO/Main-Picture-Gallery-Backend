@@ -1,6 +1,10 @@
 .ImageListItem {
   margin: 5px 0;
 
+  &.active {
+    border: 1px solid cyan;
+  }
+
   img {
     object-fit: contain;
     height: 50px; /*might be a better solution? */
