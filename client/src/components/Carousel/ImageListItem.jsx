@@ -8,7 +8,9 @@ import React from 'react';
 import cx from 'classnames';
 import './ImageListItemS.scss';
 
-const ImageListItem = ({ imgContainer, handleChange, id, isSelected }) => {
+const ImageListItem = ({
+  imgContainer, handleChange, id, isSelected,
+}) => {
   const handleItemClick = () => {
     handleChange(id);
   };
