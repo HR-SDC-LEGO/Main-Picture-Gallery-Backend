@@ -17,7 +17,7 @@ const ImageList = ({
       {
     rangeOfRenderingCarosel.map((item, index) => {
       return (
-        <ImageListItem imgContainer={item} key={index} change={changeMainPicture} test={index} />
+        <ImageListItem imgContainer={item} key={index} handleChange={changeMainPicture} id={index} />
       );
     })
       }
