@@ -54,8 +54,6 @@ class App extends React.Component {
   }
 
   changeMainPicture(e) {
-    // we will get the product im  id at set that to the siplaying
-    // we want to set the clicked item will change the url of the main
     console.log(e.target);
     this.setState({ main: e.target.src });
   }
