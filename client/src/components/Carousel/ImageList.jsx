@@ -12,7 +12,7 @@ class ImageList extends React.Component {
     super(props);
     this.state = {
       startingIndexForImageCarosel: 0,
-      endingIndexForCarosel: 7, // no used
+      endingIndexForCarosel: 7, // not used rn
     };
     this.carouselDown = this.carouselDown.bind(this);
     this.carouselUP = this.carouselUP.bind(this);
@@ -27,7 +27,7 @@ class ImageList extends React.Component {
     }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel + 1,
-      endingIndexForCarosel: endingIndexForCarosel + 1,
+      // endingIndexForCarosel: endingIndexForCarosel + 1,
     });
   }
 
@@ -38,7 +38,7 @@ class ImageList extends React.Component {
     }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
-      endingIndexForCarosel: endingIndexForCarosel - 1,
+      // endingIndexForCarosel: endingIndexForCarosel - 1,
     });
   }
 
@@ -47,9 +47,10 @@ class ImageList extends React.Component {
     const { setSelectedImageIndex } = this.props;
     let targetIndex = Number(index);
     let difference = 0;
-    const middleIndex = endingIndexForCarosel - 3;
+    const middleIndex = startingIndexForImageCarosel + 3; // middle is shifting
+    console.log(startingIndexForImageCarosel, 'stating index from carosel');
+    console.log(middleIndex, 'middle index');
     console.log(targetIndex, 'target index');
-    console.log();
 
     setSelectedImageIndex(index);
     if (targetIndex === middleIndex) {
@@ -58,17 +59,17 @@ class ImageList extends React.Component {
     if (targetIndex > middleIndex) {
       while (targetIndex !== middleIndex) {
         targetIndex -= 1;
-        difference -= 1;
+        difference += 1;
       }
     } else {
       while (targetIndex !== middleIndex) {
         targetIndex += 1;
-        difference += 1;
+        difference -= 1;
       }
     }
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel + difference,
-      endingIndexForCarosel: endingIndexForCarosel + difference,
+      // endingIndexForCarosel: endingIndexForCarosel + difference,
     });
   }
 
@@ -76,7 +77,7 @@ class ImageList extends React.Component {
     const { images, selectedImageIndex } = this.props;
     const { startingIndexForImageCarosel } = this.state;
     const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, startingIndexForImageCarosel + 7);
-    console.log(rangeOfRenderingCarosel.length, 'range of image slice');
+    console.log(rangeOfRenderingCarosel, 'range of image slice');
     return (
       <div className="ImageList">
         <button type="button" onClick={this.carouselUP}>up</button>
