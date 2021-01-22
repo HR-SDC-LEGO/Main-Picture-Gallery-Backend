@@ -1,19 +1,18 @@
-.App{
+/* .App{
   display: flex;
   width: 57.5rem;
   justify-content: center;
-}
-.ImageList{
+} */
+/* .ImageList{
   display: flex;
   flex-direction: column;
   width: 4rem;
 }
 .ImageListItem{
   object-fit: contain;
-  height: 50px; /*might be a better solution? */
+  height: 50px;
 }
-/* .MainImage{
+.MainImage{
   object-fit: contain;
-  height: 4rem;
-  width: auto;
+
 } */
