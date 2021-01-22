@@ -63,7 +63,6 @@ class ImageList extends React.Component {
         difference += 1;
       }
     }
-
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel + difference,
       endingIndexForCarosel: endingIndexForCarosel + difference,
