@@ -14,15 +14,11 @@ class Carousel extends React.Component {
       products: [],
       images: [],
       main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg',
-      startingIndexForImageCarosel: 0,
-      endingIndexForCarosel: 7,
     };
 
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
-    this.carouselDown = this.carouselDown.bind(this);
-    this.carouselUP = this.carouselUP.bind(this);
   }
 
   componentDidMount() {
@@ -84,28 +80,6 @@ class Carousel extends React.Component {
     }
   }
 
-  carouselUP() {
-    const { images, startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
-    if (images.length - 7 === startingIndexForImageCarosel) {
-      return;
-    }
-    this.setState({
-      startingIndexForImageCarosel: startingIndexForImageCarosel + 1,
-      endingIndexForCarosel: endingIndexForCarosel + 1,
-    });
-  }
-
-  carouselDown() {
-    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
-    if (startingIndexForImageCarosel === 0) {
-      return;
-    }
-    this.setState({
-      startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
-      endingIndexForCarosel: endingIndexForCarosel - 1,
-    });
-  }
-
   render() {
     if (this.state.images.length !== 0) {
       return (
@@ -113,10 +87,6 @@ class Carousel extends React.Component {
           <ImageList
             images={this.state.images}
             changeMainPicture={this.changeMainPicture}
-            carouselUP={this.carouselUP}
-            carouselDown={this.carouselDown}
-            startingIndexForImageCarosel={this.state.startingIndexForImageCarosel}
-            endingIndexForCarosel={this.state.endingIndexForCarosel}
           />
           <MainImage main={this.state.main} />
         </div>
