@@ -15,10 +15,12 @@ class ImageList extends React.Component {
     };
     this.carouselDown = this.carouselDown.bind(this);
     this.carouselUP = this.carouselUP.bind(this);
+    this.changeMainPicture = this.changeMainPicture.bind(this);
   }
 
   carouselUP() {
-    const { images, startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
+    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
+    const { images } = this.props;
     if (images.length - 7 === startingIndexForImageCarosel) {
       return;
     }
@@ -39,8 +41,37 @@ class ImageList extends React.Component {
     });
   }
 
+  changeMainPicture(index) {
+    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
+    const { setSelectedImageIndex } = this.props;
+    let targetIndex = Number(index);
+    let difference = 0;
+    const middleIndex = endingIndexForCarosel - 3;
+
+    setSelectedImageIndex(index);
+    if (targetIndex === middleIndex) {
+      return;
+    }
+    if (targetIndex > middleIndex) {
+      while (targetIndex !== middleIndex) {
+        targetIndex -= 1;
+        difference -= 1;
+      }
+    } else {
+      while (targetIndex !== middleIndex) {
+        targetIndex += 1;
+        difference += 1;
+      }
+    }
+
+    this.setState({
+      startingIndexForImageCarosel: startingIndexForImageCarosel + difference,
+      endingIndexForCarosel: endingIndexForCarosel + difference,
+    });
+  }
+
   render() {
-    const { images, changeMainPicture } = this.props;
+    const { images } = this.props;
     const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, endingIndexForCarosel);
 
@@ -50,7 +81,7 @@ class ImageList extends React.Component {
         {
       rangeOfRenderingCarosel.map((item, index) => {
         return (
-          <ImageListItem imgContainer={item} key={index} handleChange={changeMainPicture} id={index} />
+          <ImageListItem imgContainer={item} key={index} handleChange={this.changeMainPicture} id={index} />
         );
       })
         }
