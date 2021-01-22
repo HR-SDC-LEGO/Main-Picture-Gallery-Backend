@@ -3,7 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import $ from 'jquery';
-import Current from '../Carousel/Current';
+import MainImage from '../Carousel/MainImage';
 import ImageList from '../Carousel/ImageList';
 import './AppS.scss';
 
@@ -118,7 +118,7 @@ class App extends React.Component {
             startingIndexForImageCarosel={this.state.startingIndexForImageCarosel}
             endingIndexForCarosel={this.state.endingIndexForCarosel}
           />
-          <Current main={this.state.main} />
+          <MainImage main={this.state.main} />
         </div>
       );
     } else {

@@ -2,16 +2,16 @@
 /* eslint-disable arrow-body-style */
 
 import React from 'react';
-import './CurrentS.scss';
+import './MainImageS.scss';
 
-const Current = ({ main }) => {
+const MainImage = ({ main }) => {
   return (
-    <div className="Current">
+    <div className="MainImage">
       <div className="MainImageZoom">
-        <img className="MainImage" src={main} alt="product" />
+        <img src={main} alt="product" />
       </div>
     </div>
   );
 };
 
-export default Current;
+export default MainImage;

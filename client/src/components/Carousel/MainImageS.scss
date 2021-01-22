@@ -1,4 +1,4 @@
-.Current {
+.MainImage {
   display: flex;
   background-color: purple;
   height: 8rem;
@@ -9,7 +9,7 @@
     height: 8rem;
     width: auto;
   }
-  .MainImage{
+  img {
     object-fit: contain;
     background-color: red;
     padding: .1rem;
