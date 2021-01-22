@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
@@ -11,7 +12,7 @@ class ImageList extends React.Component {
     super(props);
     this.state = {
       startingIndexForImageCarosel: 0,
-      endingIndexForCarosel: 7,
+      endingIndexForCarosel: 7, // no used
     };
     this.carouselDown = this.carouselDown.bind(this);
     this.carouselUP = this.carouselUP.bind(this);
@@ -47,6 +48,8 @@ class ImageList extends React.Component {
     let targetIndex = Number(index);
     let difference = 0;
     const middleIndex = endingIndexForCarosel - 3;
+    console.log(targetIndex, 'target index');
+    console.log();
 
     setSelectedImageIndex(index);
     if (targetIndex === middleIndex) {
@@ -71,8 +74,8 @@ class ImageList extends React.Component {
 
   render() {
     const { images, selectedImageIndex } = this.props;
-    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
-    const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, endingIndexForCarosel);
+    const { startingIndexForImageCarosel } = this.state;
+    const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, startingIndexForImageCarosel + 7);
     console.log(rangeOfRenderingCarosel.length, 'range of image slice');
     return (
       <div className="ImageList">
