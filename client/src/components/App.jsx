@@ -54,8 +54,35 @@ class App extends React.Component {
   }
 
   changeMainPicture(e) {
-    console.log(e.target);
-    this.setState({ main: e.target.src });
+    // console.log(e.target.id === "3");
+    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
+    let targetIndex = Number(e.target.id);
+    let difference = 0;
+    if (targetIndex > 3) {
+      while (targetIndex !== 3) {
+        targetIndex -= 1;
+        difference -= 1;
+      }
+      this.setState({
+        main: e.target.src,
+        startingIndexForImageCarosel: startingIndexForImageCarosel - difference,
+        endingIndexForCarosel: endingIndexForCarosel - difference,
+      });
+    } else if (targetIndex < 3) {
+      while (targetIndex !== 3) {
+        targetIndex += 1;
+        difference += 1;
+      }
+      this.setState({
+        main: e.target.src,
+        startingIndexForImageCarosel: startingIndexForImageCarosel + difference,
+        endingIndexForCarosel: endingIndexForCarosel + difference,
+      });
+    } else {
+      this.setState({
+        main: e.target.src,
+      });
+    }
   }
 
   carouselUP() {
@@ -83,8 +110,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.startingIndexForImageCarosel, 'starting');
-    console.log(this.state.endingIndexForCarosel, 'ending');
+    // console.log(this.state.startingIndexForImageCarosel, 'starting');
+    // console.log(this.state.endingIndexForCarosel, 'ending');
     if (this.state.images.length !== 0) {
       return (
         <div className="App">

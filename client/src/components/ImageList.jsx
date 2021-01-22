@@ -5,8 +5,9 @@
 import React from 'react';
 import ImageListItem from './ImageListItem';
 
-const ImageList = ({ images, changeMainPicture, carouselDown, carouselUP, startingIndexForImageCarosel, endingIndexForCarosel }) => {
-
+const ImageList = ({
+  images, changeMainPicture, carouselDown, carouselUP, startingIndexForImageCarosel, endingIndexForCarosel,
+}) => {
   const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, endingIndexForCarosel);
 
   return (
