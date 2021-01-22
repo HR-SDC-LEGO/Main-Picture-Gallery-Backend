@@ -61,6 +61,7 @@ class Carousel extends React.Component {
           <ImageList
             images={images}
             setSelectedImageIndex={this.setSelectedImageIndex}
+            selectedImageIndex={selectedImageIndex}
           />
           <MainImage main={images[selectedImageIndex].url} />
         </div>
