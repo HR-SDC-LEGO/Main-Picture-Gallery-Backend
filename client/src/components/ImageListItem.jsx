@@ -6,12 +6,12 @@
 
 import React from 'react';
 
-const ImageListItem = ({ imgContainer, change }) => {
-  // console.log(imgContainer);
+const ImageListItem = ({ imgContainer, change, test }) => {
+  // console.log(test, 'item');
   return (
     <div>
       <button onClick={change} className="ImageListButton">
-        <img className="ImageListItem" src={imgContainer.product_image} alt="test" />
+        <img className="ImageListItem" id={test} src={imgContainer.product_image} alt="test" />
       </button>
     </div>
   );
