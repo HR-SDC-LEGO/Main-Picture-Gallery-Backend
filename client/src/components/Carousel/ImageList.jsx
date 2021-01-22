@@ -73,6 +73,7 @@ class ImageList extends React.Component {
     const { images, selectedImageIndex } = this.props;
     const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, endingIndexForCarosel);
+    console.log(rangeOfRenderingCarosel.length, 'range of image slice');
     return (
       <div className="ImageList">
         <button type="button" onClick={this.carouselUP}>up</button>

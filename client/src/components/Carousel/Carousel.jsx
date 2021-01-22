@@ -63,7 +63,7 @@ class Carousel extends React.Component {
             setSelectedImageIndex={this.setSelectedImageIndex}
             selectedImageIndex={selectedImageIndex}
           />
-          <MainImage main={images[selectedImageIndex].url} />
+          <MainImage main={images[selectedImageIndex].product_image} />
         </div>
       );
     } else {
