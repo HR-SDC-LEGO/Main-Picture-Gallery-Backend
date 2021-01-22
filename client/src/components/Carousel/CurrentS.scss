@@ -7,10 +7,11 @@
   }
   .MainImage{
     object-fit: contain;
+    background-color: red;
     padding: .1rem;
     vertical-align: middle;
     justify-content: center;
-    height: 30rem;
+    height: 8rem;
     width: auto;
   }
 }

@@ -5,6 +5,7 @@ import React from 'react';
 import $ from 'jquery';
 import Current from '../Carousel/Current';
 import ImageList from '../Carousel/ImageList';
+import './AppS.scss';
 
 class App extends React.Component {
   constructor(props) {
