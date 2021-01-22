@@ -1,0 +1,16 @@
+.Current {
+  display: flex;
+  background-color: purple;
+
+  .MainImageZoom {
+    background-color: yellow;
+  }
+  .MainImage{
+    object-fit: contain;
+    padding: .1rem;
+    vertical-align: middle;
+    justify-content: center;
+    height: 30rem;
+    width: auto;
+  }
+}

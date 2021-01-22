@@ -5,6 +5,7 @@
 /* eslint-disable arrow-body-style */
 
 import React from 'react';
+import './ImageListItemS.scss';
 
 const ImageListItem = ({ imgContainer, change, test }) => {
   return (

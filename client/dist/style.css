@@ -12,8 +12,8 @@
   object-fit: contain;
   height: 50px; /*might be a better solution? */
 }
-.MainImage{
+/* .MainImage{
   object-fit: contain;
   height: 4rem;
   width: auto;
-}
+} */
