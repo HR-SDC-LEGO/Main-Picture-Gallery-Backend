@@ -3,8 +3,8 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import $ from 'jquery';
-import Current from './Current';
-import ImageList from './ImageList';
+import Current from '../Carousel/Current';
+import ImageList from '../Carousel/ImageList';
 
 class App extends React.Component {
   constructor(props) {

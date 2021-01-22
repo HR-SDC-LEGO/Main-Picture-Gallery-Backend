@@ -13,9 +13,14 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(scss)$/,
+        exclude: /node_modules/,
+        use: ['sass-loader'],
+      },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
   },
 };
