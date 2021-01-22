@@ -7,12 +7,16 @@
 import React from 'react';
 import './ImageListItemS.scss';
 
-const ImageListItem = ({ imgContainer, change, test }) => {
+const ImageListItem = ({ imgContainer, handleChange, id }) => {
+  const handleItemClick = () => {
+    handleChange(id);
+  };
+
   return (
-    <div>
-      <button onClick={change} className="ImageListButton">
-        <img className="ImageListItem" id={test} src={imgContainer.product_image} alt="test" />
-      </button>
+    <div className="ImageListItem">
+      <div onClick={handleItemClick} className="ImageListButton" role="img">
+        <img src={imgContainer.product_image} alt="test" />
+      </div>
     </div>
   );
 };

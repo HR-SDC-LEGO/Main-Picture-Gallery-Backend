@@ -1,4 +1,8 @@
 .ImageListItem {
-  object-fit: contain;
-  height: 50px; /*might be a better solution? */
+  margin: 5px 0;
+
+  img {
+    object-fit: contain;
+    height: 50px; /*might be a better solution? */
+  }
 }
