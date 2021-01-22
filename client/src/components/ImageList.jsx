@@ -24,7 +24,4 @@ const ImageList = ({
     </div>
   );
 };
-/*
-priorize the font end above everything at the moment, it should be a visualy pleasing front end. we might want to reduce the amout of tests?
-*/
 export default ImageList;

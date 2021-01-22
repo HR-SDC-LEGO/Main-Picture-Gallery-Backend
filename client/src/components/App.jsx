@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       products: [],
       images: [],
-      main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg', // index
+      main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg',
       startingIndexForImageCarosel: 0,
       endingIndexForCarosel: 7,
     };
@@ -42,7 +42,6 @@ class App extends React.Component {
   }
 
   getImages(query = this.state.products[0].product_id) {
-    // console.log(query); // works here
     $.ajax({
       method: 'POST',
       data: JSON.stringify(query),
@@ -54,7 +53,6 @@ class App extends React.Component {
   }
 
   changeMainPicture(e) {
-    // console.log(e.target.id === "3");
     const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     let targetIndex = Number(e.target.id);
     let difference = 0;
@@ -86,7 +84,6 @@ class App extends React.Component {
   }
 
   carouselUP() {
-    // this will change the amount id of pictures we render
     const { images, startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     if (images.length - 7 === startingIndexForImageCarosel) {
       return;
@@ -98,7 +95,6 @@ class App extends React.Component {
   }
 
   carouselDown() {
-    // this will change the amount id of pictures we render
     const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
     if (startingIndexForImageCarosel === 0) {
       return;
@@ -110,8 +106,6 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.startingIndexForImageCarosel, 'starting');
-    // console.log(this.state.endingIndexForCarosel, 'ending');
     if (this.state.images.length !== 0) {
       return (
         <div className="App">
