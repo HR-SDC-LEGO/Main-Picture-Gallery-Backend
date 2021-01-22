@@ -13,12 +13,12 @@ class Carousel extends React.Component {
     this.state = {
       products: [],
       images: [],
-      main: 'https://legoimages.s3-us-west-1.amazonaws.com/Collosium.jpeg',
+      selectedImageIndex: 0,
     };
 
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
-    this.changeMainPicture = this.changeMainPicture.bind(this);
+    this.setSelectedImageIndex = this.setSelectedImageIndex.bind(this);
   }
 
   componentDidMount() {
@@ -49,46 +49,20 @@ class Carousel extends React.Component {
     });
   }
 
-  changeMainPicture(e) {
-    const { startingIndexForImageCarosel, endingIndexForCarosel } = this.state;
-    let targetIndex = Number(e.target.id);
-    let difference = 0;
-    if (targetIndex > 3) {
-      while (targetIndex !== 3) {
-        targetIndex -= 1;
-        difference -= 1;
-      }
-      this.setState({
-        main: e.target.src,
-        startingIndexForImageCarosel: startingIndexForImageCarosel - difference,
-        endingIndexForCarosel: endingIndexForCarosel - difference,
-      });
-    } else if (targetIndex < 3) {
-      while (targetIndex !== 3) {
-        targetIndex += 1;
-        difference += 1;
-      }
-      this.setState({
-        main: e.target.src,
-        startingIndexForImageCarosel: startingIndexForImageCarosel + difference,
-        endingIndexForCarosel: endingIndexForCarosel + difference,
-      });
-    } else {
-      this.setState({
-        main: e.target.src,
-      });
-    }
+  setSelectedImageIndex(index) {
+    this.setState({ selectedImageIndex: index });
   }
 
   render() {
-    if (this.state.images.length !== 0) {
+    const { images, selectedImageIndex } = this.state;
+    if (images.length !== 0) {
       return (
         <div className="Carousel">
           <ImageList
-            images={this.state.images}
-            changeMainPicture={this.changeMainPicture}
+            images={images}
+            setSelectedImageIndex={this.setSelectedImageIndex}
           />
-          <MainImage main={this.state.main} />
+          <MainImage main={images[selectedImageIndex].url} />
         </div>
       );
     } else {
