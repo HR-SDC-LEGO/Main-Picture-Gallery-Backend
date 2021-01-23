@@ -13,15 +13,13 @@ import ImageList from './ImageList';
 
 const MainImage = ({ main, changeMainPicture, carouselDown, carouselUp }) => {
   const alert = () => {
-    console.log(('clicked'));
+
   };
   return (
     <div className="MainImage">
-      <button type="button" onClick={carouselDown}>down</button>
       <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
         <img src={main} alt="product" />
       </div>
-      <button type='button' onClick={carouselUp}>up</button>
     </div>
   );
 };

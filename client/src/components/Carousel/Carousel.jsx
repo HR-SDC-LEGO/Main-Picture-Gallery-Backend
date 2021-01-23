@@ -15,15 +15,11 @@ class Carousel extends React.Component {
       products: [],
       images: [],
       selectedImageIndex: 0,
-      startingIndexForImageCarosel: 0,
     };
 
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
     this.setSelectedImageIndex = this.setSelectedImageIndex.bind(this);
-    this.changeMainPicture = this.changeMainPicture.bind(this);
-    this.carouselUp = this.carouselUp.bind(this);
-    this.carouselDown = this.carouselDown.bind(this);
   }
 
   componentDidMount() {
@@ -58,58 +54,8 @@ class Carousel extends React.Component {
     this.setState({ selectedImageIndex: index });
   }
 
-  carouselDown() {
-    const { startingIndexForImageCarosel, images } = this.state;
-    // const { images } = this.props;
-    if (images.length - 7 === startingIndexForImageCarosel) {
-      return;
-    }
-    this.setState({
-      startingIndexForImageCarosel: startingIndexForImageCarosel + 1,
-    });
-  }
-
-  carouselUp() {
-    const { startingIndexForImageCarosel } = this.state;
-    if (startingIndexForImageCarosel === 0) {
-      return;
-    }
-    this.setState({
-      startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
-    });
-  }
-
-  changeMainPicture(index) {
-    const { startingIndexForImageCarosel } = this.state;
-    // const { setSelectedImageIndex } = this.props;
-    let targetIndex = Number(index);
-    let difference = 0;
-    const middleIndex = startingIndexForImageCarosel + 3;
-    this.setSelectedImageIndex(index);
-    if (targetIndex === middleIndex) {
-      return;
-    }
-    if (targetIndex > middleIndex) {
-      while (targetIndex !== middleIndex) {
-        targetIndex -= 1;
-        difference += 1;
-      }
-    } else {
-      while (targetIndex !== middleIndex) {
-        targetIndex += 1;
-        difference -= 1;
-      }
-    }
-    this.setState({
-      startingIndexForImageCarosel: startingIndexForImageCarosel + difference,
-    });
-  }
-
   render() {
-    const {
-      images, selectedImageIndex, startingIndexForImageCarosel,
-    } = this.state;
-
+    const { images, selectedImageIndex } = this.state;
     if (images.length !== 0) {
       return (
         <div className="Carousel">
@@ -117,17 +63,8 @@ class Carousel extends React.Component {
             images={images}
             setSelectedImageIndex={this.setSelectedImageIndex}
             selectedImageIndex={selectedImageIndex}
-            startingIndexForImageCarosel={startingIndexForImageCarosel}
-            changeMainPicture={this.changeMainPicture}
-            carouselUp={this.carouselUp}
-            carouselDown={this.carouselDown}
           />
-          <MainImage
-            main={images[selectedImageIndex].product_image}
-            changeMainPicture={this.changeMainPicture}
-            carouselUp={this.carouselUp}
-            carouselDown={this.carouselDown}
-          />
+          <MainImage main={images[selectedImageIndex].product_image} />
         </div>
       );
     } else {
