@@ -16,8 +16,8 @@ class ImageList extends React.Component {
     this.carouselUp = this.carouselUp.bind(this);
     this.carouselDown = this.carouselDown.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
-    this.left = this.left.bind(this);
-    this.right = this.right.bind(this);
+    this.carouselRight = this.carouselRight.bind(this);
+    this.carouselLeft = this.carouselLeft.bind(this);
   }
 
   carouselDown() {
@@ -39,6 +39,11 @@ class ImageList extends React.Component {
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
     });
+  }
+
+  componentDidMount() {
+    const { setSelectedImageIndex } = this.props;
+    setSelectedImageIndex(3);
   }
 
   changeMainPicture(index) {
@@ -67,13 +72,13 @@ class ImageList extends React.Component {
     });
   }
 
-  left() {
+  carouselRight() {
     const { selectedImageIndex } = this.props;
     this.carouselUp();
     this.changeMainPicture(selectedImageIndex + 1);
   }
 
-  right() {
+  carouselLeft() {
     const { selectedImageIndex } = this.props;
     this.carouselDown();
     this.changeMainPicture(selectedImageIndex - 1);
@@ -86,8 +91,8 @@ class ImageList extends React.Component {
     return (
       <div className="ImageList">
 
-        <div className="MainImageButtonRight">
-          <button type="button" onClick={this.left}>-----➤</button>
+        <div className="carouselRight">
+          <button type="button" onClick={this.carouselRight}>-----➤</button>
         </div>
 
         <button type="button" onClick={this.carouselUp}>up</button>
@@ -101,8 +106,8 @@ class ImageList extends React.Component {
         }
         <button type="button" onClick={this.carouselDown}>down</button>
 
-        <div className="MainImageButtonLeft">
-          <button type="button" onClick={this.right}>ᐊ-----</button>
+        <div className="carouselLeft">
+          <button type="button" onClick={this.carouselLeft}>ᐊ-----</button>
         </div>
 
       </div>
