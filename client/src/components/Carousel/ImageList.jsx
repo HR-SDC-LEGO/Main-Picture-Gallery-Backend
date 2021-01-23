@@ -13,12 +13,12 @@ class ImageList extends React.Component {
     this.state = {
       startingIndexForImageCarosel: 0,
     };
+    this.carouselUp = this.carouselUp.bind(this);
     this.carouselDown = this.carouselDown.bind(this);
-    this.carouselUP = this.carouselUP.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
   }
 
-  carouselUP() {
+  carouselDown() {
     const { startingIndexForImageCarosel } = this.state;
     const { images } = this.props;
     if (images.length - 7 === startingIndexForImageCarosel) {
@@ -29,7 +29,7 @@ class ImageList extends React.Component {
     });
   }
 
-  carouselDown() {
+  carouselUp() {
     const { startingIndexForImageCarosel } = this.state;
     if (startingIndexForImageCarosel === 0) {
       return;
@@ -72,7 +72,7 @@ class ImageList extends React.Component {
 
     return (
       <div className="ImageList">
-        <button type="button" onClick={this.carouselUP}>up</button>
+        <button type="button" onClick={this.carouselUp}>up</button>
         {
       rangeOfRenderingCarosel.map((item, index) => {
         const imageIndex = index + startingIndexForImageCarosel;
