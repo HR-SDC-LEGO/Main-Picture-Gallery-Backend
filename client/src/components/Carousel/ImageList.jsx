@@ -31,8 +31,7 @@ class ImageList extends React.Component {
     });
   }
 
-  carouselUp(test) {
-    // console.log(test);
+  carouselUp() {
     const { startingIndexForImageCarosel } = this.state;
     if (startingIndexForImageCarosel === 0) {
       return;
@@ -107,7 +106,6 @@ class ImageList extends React.Component {
         </div>
 
       </div>
-
     );
   }
 }
