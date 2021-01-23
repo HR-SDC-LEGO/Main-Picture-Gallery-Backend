@@ -5,7 +5,6 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import ImageListItem from './ImageListItem';
-import MainImage from './MainImage';
 import './ImageListS.scss';
 
 class ImageList extends React.Component {
@@ -17,6 +16,8 @@ class ImageList extends React.Component {
     this.carouselUp = this.carouselUp.bind(this);
     this.carouselDown = this.carouselDown.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
+    this.left = this.left.bind(this);
+    this.right = this.right.bind(this);
   }
 
   carouselDown() {
@@ -30,7 +31,8 @@ class ImageList extends React.Component {
     });
   }
 
-  carouselUp() {
+  carouselUp(test) {
+    // console.log(test);
     const { startingIndexForImageCarosel } = this.state;
     if (startingIndexForImageCarosel === 0) {
       return;
@@ -66,15 +68,29 @@ class ImageList extends React.Component {
     });
   }
 
+  left() {
+    const { selectedImageIndex } = this.props;
+    this.carouselUp();
+    this.changeMainPicture(selectedImageIndex + 1);
+  }
+
+  right() {
+    const { selectedImageIndex } = this.props;
+    this.carouselUp();
+    this.changeMainPicture(selectedImageIndex - 1);
+  }
+
   render() {
     const { images, selectedImageIndex } = this.props;
     const { startingIndexForImageCarosel } = this.state;
     const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, startingIndexForImageCarosel + 7);
     return (
       <div className="ImageList">
-        <div className="left">
-          <button type="button" onClick={this.carouselDown}>TEST</button>
+
+        <div className="MainImageButtonRight">
+          <button type="button" onClick={this.left}>TEST1234</button>
         </div>
+
         <button type="button" onClick={this.carouselUp}>up</button>
         {
       rangeOfRenderingCarosel.map((item, index) => {
@@ -85,9 +101,11 @@ class ImageList extends React.Component {
       })
         }
         <button type="button" onClick={this.carouselDown}>down</button>
-        <div className="right">
+
+        <div className="MainImageButtonLeft">
           <button type="button" onClick={this.carouselUp}>TEST</button>
         </div>
+
       </div>
 
     );

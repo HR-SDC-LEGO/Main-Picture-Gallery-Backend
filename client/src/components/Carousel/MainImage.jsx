@@ -11,6 +11,7 @@ import React from 'react';
 import './MainImageS.scss';
 import ImageList from './ImageList';
 
+// eslint-disable-next-line object-curly-newline
 const MainImage = ({ main, changeMainPicture, carouselDown, carouselUp }) => {
   const alert = () => {
 
