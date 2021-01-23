@@ -76,7 +76,7 @@ class ImageList extends React.Component {
 
   right() {
     const { selectedImageIndex } = this.props;
-    this.carouselUp();
+    this.carouselDown();
     this.changeMainPicture(selectedImageIndex - 1);
   }
 
@@ -88,7 +88,7 @@ class ImageList extends React.Component {
       <div className="ImageList">
 
         <div className="MainImageButtonRight">
-          <button type="button" onClick={this.left}>TEST1234</button>
+          <button type="button" onClick={this.left}>-----➤</button>
         </div>
 
         <button type="button" onClick={this.carouselUp}>up</button>
@@ -103,7 +103,7 @@ class ImageList extends React.Component {
         <button type="button" onClick={this.carouselDown}>down</button>
 
         <div className="MainImageButtonLeft">
-          <button type="button" onClick={this.carouselUp}>TEST</button>
+          <button type="button" onClick={this.right}>ᐊ-----</button>
         </div>
 
       </div>
