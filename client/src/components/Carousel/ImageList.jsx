@@ -45,7 +45,6 @@ class ImageList extends React.Component {
     let targetIndex = Number(index);
     let difference = 0;
     const middleIndex = startingIndexForImageCarosel + 3;
-
     setSelectedImageIndex(index);
     if (targetIndex === middleIndex) {
       return;
