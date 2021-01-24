@@ -16,8 +16,8 @@ class ImageList extends React.Component {
     this.carouselUp = this.carouselUp.bind(this);
     this.carouselDown = this.carouselDown.bind(this);
     this.changeMainPicture = this.changeMainPicture.bind(this);
-    this.carouselRight = this.carouselRight.bind(this);
-    this.carouselLeft = this.carouselLeft.bind(this);
+    // this.carouselRight = this.carouselRight.bind(this);
+    // this.carouselLeft = this.carouselLeft.bind(this);
   }
 
   componentDidMount() {
@@ -77,17 +77,17 @@ class ImageList extends React.Component {
     });
   }
 
-  carouselRight() { // move up into main img
-    const { selectedImageIndex } = this.props;
-    const { setSelectedImageIndex } = this.props;
-    setSelectedImageIndex(selectedImageIndex + 1);
-  }
+  // carouselRight() { // move up into main img
+  //   const { selectedImageIndex } = this.props;
+  //   const { setSelectedImageIndex } = this.props;
+  //   setSelectedImageIndex(selectedImageIndex + 1);
+  // }
 
-  carouselLeft() {
-    const { selectedImageIndex } = this.props;
-    this.carouselDown();
-    this.changeMainPicture(selectedImageIndex - 1);
-  }
+  // carouselLeft() {
+  //   const { selectedImageIndex } = this.props;
+  //   const { setSelectedImageIndex } = this.props;
+  //   setSelectedImageIndex(selectedImageIndex - 1);
+  // }
 
   render() {
     const { images, selectedImageIndex, setSelectedImageIndex } = this.props;
@@ -97,9 +97,9 @@ class ImageList extends React.Component {
     return (
       <div className="ImageList">
 
-        <div className="carouselRight">
+        {/* <div className="carouselRight">
           <button type="button" onClick={this.carouselRight}>-----➤</button>
-        </div>
+        </div> */}
 
         <button type="button" onClick={this.carouselUp}>up</button>
         {
@@ -112,9 +112,9 @@ class ImageList extends React.Component {
         }
         <button type="button" onClick={this.carouselDown}>down</button>
 
-        <div className="carouselLeft">
+        {/* <div className="carouselLeft">
           <button type="button" onClick={this.carouselLeft}>ᐊ-----</button>
-        </div>
+        </div> */}
 
       </div>
     );
