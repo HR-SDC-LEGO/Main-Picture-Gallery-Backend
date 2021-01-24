@@ -25,6 +25,13 @@ class ImageList extends React.Component {
     setSelectedImageIndex(3);
   }
 
+  componentDidUpdate(prevProps) {
+    const { selectedImageIndex } = this.props;
+    if (prevProps.selectedImageIndex !== selectedImageIndex) {
+      this.changeMainPicture(selectedImageIndex);
+    }
+  }
+
   carouselDown() {
     const { startingIndexForImageCarosel } = this.state;
     const { images } = this.props;
@@ -48,11 +55,9 @@ class ImageList extends React.Component {
 
   changeMainPicture(index) {
     const { startingIndexForImageCarosel } = this.state;
-    const { setSelectedImageIndex } = this.props;
     let targetIndex = Number(index);
     let difference = 0;
     const middleIndex = startingIndexForImageCarosel + 3;
-    setSelectedImageIndex(index);
     if (targetIndex === middleIndex) {
       return;
     }
@@ -72,10 +77,10 @@ class ImageList extends React.Component {
     });
   }
 
-  carouselRight() {
+  carouselRight() { // move up into main img
     const { selectedImageIndex } = this.props;
-    this.carouselUp();
-    this.changeMainPicture(selectedImageIndex + 1);
+    const { setSelectedImageIndex } = this.props;
+    setSelectedImageIndex(selectedImageIndex + 1);
   }
 
   carouselLeft() {
@@ -85,8 +90,9 @@ class ImageList extends React.Component {
   }
 
   render() {
-    const { images, selectedImageIndex } = this.props;
+    const { images, selectedImageIndex, setSelectedImageIndex } = this.props;
     const { startingIndexForImageCarosel } = this.state;
+// move the stating into conditonals so if its out of range the slice will get default vales for the end points
     const rangeOfRenderingCarosel = images.slice(startingIndexForImageCarosel, startingIndexForImageCarosel + 7);
     return (
       <div className="ImageList">
@@ -100,7 +106,7 @@ class ImageList extends React.Component {
       rangeOfRenderingCarosel.map((item, index) => {
         const imageIndex = index + startingIndexForImageCarosel;
         return (
-          <ImageListItem imgContainer={item} key={imageIndex} handleChange={this.changeMainPicture} id={imageIndex} isSelected={selectedImageIndex === imageIndex} />
+          <ImageListItem imgContainer={item} key={imageIndex} handleChange={setSelectedImageIndex} id={imageIndex} isSelected={selectedImageIndex === imageIndex} />
         );
       })
         }
