@@ -20,6 +20,11 @@ class ImageList extends React.Component {
     this.carouselLeft = this.carouselLeft.bind(this);
   }
 
+  componentDidMount() {
+    const { setSelectedImageIndex } = this.props;
+    setSelectedImageIndex(3);
+  }
+
   carouselDown() {
     const { startingIndexForImageCarosel } = this.state;
     const { images } = this.props;
@@ -39,11 +44,6 @@ class ImageList extends React.Component {
     this.setState({
       startingIndexForImageCarosel: startingIndexForImageCarosel - 1,
     });
-  }
-
-  componentDidMount() {
-    const { setSelectedImageIndex } = this.props;
-    setSelectedImageIndex(3);
   }
 
   changeMainPicture(index) {
