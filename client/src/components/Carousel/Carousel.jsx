@@ -20,6 +20,8 @@ class Carousel extends React.Component {
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
     this.setSelectedImageIndex = this.setSelectedImageIndex.bind(this);
+    this.carouselRight = this.carouselRight.bind(this);
+    this.carouselLeft = this.carouselLeft.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +56,16 @@ class Carousel extends React.Component {
     this.setState({ selectedImageIndex: index });
   }
 
+  carouselRight() { // move up into main img
+    const { selectedImageIndex } = this.state;
+    this.setSelectedImageIndex(selectedImageIndex + 1);
+  }
+
+  carouselLeft() {
+    const { selectedImageIndex } = this.state;
+    this.setSelectedImageIndex(selectedImageIndex - 1);
+  }
+
   render() {
     const { images, selectedImageIndex } = this.state;
     if (images.length !== 0) {
@@ -64,7 +76,7 @@ class Carousel extends React.Component {
             setSelectedImageIndex={this.setSelectedImageIndex}
             selectedImageIndex={selectedImageIndex}
           />
-          <MainImage main={images[selectedImageIndex].product_image} />
+          <MainImage main={images[selectedImageIndex].product_image} carouselLeft={this.carouselLeft} carouselRight={this.carouselRight} />
         </div>
       );
     } else {

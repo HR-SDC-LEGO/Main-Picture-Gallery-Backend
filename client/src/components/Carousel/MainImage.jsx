@@ -12,16 +12,26 @@ import './MainImageS.scss';
 import ImageList from './ImageList';
 
 // eslint-disable-next-line object-curly-newline
-const MainImage = ({ main, changeMainPicture, carouselDown, carouselUp }) => {
+const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => {
   const alert = () => {
 
   };
 
   return (
     <div className="MainImage">
+
+      <div className="carouselRight">
+        <button type="button" onClick={carouselRight}>-----➤</button>
+      </div>
+
       <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
         <img src={main} alt="product" />
       </div>
+
+      <div className="carouselLeft">
+        <button type="button" onClick={carouselLeft}>ᐊ-----</button>
+      </div>
+
     </div>
   );
 };
