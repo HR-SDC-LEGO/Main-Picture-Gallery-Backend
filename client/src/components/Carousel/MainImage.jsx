@@ -16,6 +16,7 @@ const MainImage = ({ main, changeMainPicture, carouselDown, carouselUp }) => {
   const alert = () => {
 
   };
+
   return (
     <div className="MainImage">
       <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
