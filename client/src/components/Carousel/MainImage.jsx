@@ -19,6 +19,14 @@ class MainImage extends React.Component {
     this.state = {
       zoom: false,
     };
+    this.zoomMain = this.zoomMain.bind(this);
+  }
+
+  zoomMain() {
+    const { zoom } = this.state;
+    this.setState({
+      zoom: !zoom,
+    });
   }
 
   render() {
@@ -28,7 +36,7 @@ class MainImage extends React.Component {
     if (zoom === false) {
       test = <img src={main} alt="product" />;
     } else {
-      test = <Zoom img={main} zoomScale={3} width={600} height={600} />;
+      test = <Zoom img={main} zoomScale={3} width={750} height={600} />;
     }
 
     return (
@@ -38,7 +46,7 @@ class MainImage extends React.Component {
           <button className="button" type="button" onClick={carouselRight}>❮</button>
         </div>
 
-        <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
+        <div className="MainImageZoom" id="MainImageZoom" onClick={this.zoomMain}>
           {test}
         </div>
 
