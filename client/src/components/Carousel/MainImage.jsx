@@ -8,14 +8,23 @@
 /* eslint-disable arrow-body-style */
 
 import React from 'react';
+import Zoom from 'react-img-zoom';
 import './MainImageS.scss';
 import ImageList from './ImageList';
 
 // eslint-disable-next-line object-curly-newline
-const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => {
+const MainImage = ({ main, carouselLeft, carouselRight }) => {
+  let zoom = false;
+  let test = null;
   const alert = () => {
-    // on click call img zoom
+    zoom = !zoom;
   };
+
+  if (zoom === false) {
+    test = <img src={main} alt="product" />;
+  } else {
+    test = <Zoom img={main} zoomScale={3} width={600} height={600} />;
+  }
 
   return (
     <div className="MainImage">
@@ -25,7 +34,7 @@ const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => 
       </div>
 
       <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
-        <img src={main} alt="product" />
+        {test}
       </div>
 
       <div className="carouselLeft">
