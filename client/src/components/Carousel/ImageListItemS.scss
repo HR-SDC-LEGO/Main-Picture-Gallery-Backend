@@ -1,8 +1,8 @@
 .ImageListItem {
   margin: 5px 0;
-
+  border: 1px solid gray;
   &.active {
-    border: 1px solid cyan;
+    border: 2px solid blue;
   }
 
   img {
