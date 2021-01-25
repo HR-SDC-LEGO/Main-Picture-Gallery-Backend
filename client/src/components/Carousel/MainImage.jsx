@@ -21,7 +21,7 @@ const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => 
     <div className="MainImage">
 
       <div className="carouselRight">
-        <button type="button" onClick={carouselRight}>❮</button>
+        <button className="button" type="button" onClick={carouselRight}>❮</button>
       </div>
 
       <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
@@ -29,7 +29,7 @@ const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => 
       </div>
 
       <div className="carouselLeft">
-        <button type="button" onClick={carouselLeft}>❯</button>
+        <button className="button" type="button" onClick={carouselLeft}>❯</button>
       </div>
 
     </div>
