@@ -13,36 +13,42 @@ import './MainImageS.scss';
 import ImageList from './ImageList';
 
 // eslint-disable-next-line object-curly-newline
-const MainImage = ({ main, carouselLeft, carouselRight }) => {
-  let zoom = false;
-  let test = null;
-  const alert = () => {
-    zoom = !zoom;
-  };
-
-  if (zoom === false) {
-    test = <img src={main} alt="product" />;
-  } else {
-    test = <Zoom img={main} zoomScale={3} width={600} height={600} />;
+class MainImage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      zoom: false,
+    };
   }
 
-  return (
-    <div className="MainImage">
+  render() {
+    const { main, carouselLeft, carouselRight } = this.props;
+    const { zoom } = this.state;
+    let test = null;
+    if (zoom === false) {
+      test = <img src={main} alt="product" />;
+    } else {
+      test = <Zoom img={main} zoomScale={3} width={600} height={600} />;
+    }
 
-      <div className="carouselRight">
-        <button className="button" type="button" onClick={carouselRight}>❮</button>
+    return (
+      <div className="MainImage">
+
+        <div className="carouselRight">
+          <button className="button" type="button" onClick={carouselRight}>❮</button>
+        </div>
+
+        <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
+          {test}
+        </div>
+
+        <div className="carouselLeft">
+          <button className="button" type="button" onClick={carouselLeft}>❯</button>
+        </div>
+
       </div>
-
-      <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
-        {test}
-      </div>
-
-      <div className="carouselLeft">
-        <button className="button" type="button" onClick={carouselLeft}>❯</button>
-      </div>
-
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default MainImage;
