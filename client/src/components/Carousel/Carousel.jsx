@@ -67,7 +67,7 @@ class Carousel extends React.Component {
   }
 
   render() {
-    const { images, selectedImageIndex } = this.state;
+    const { images, selectedImageIndex, zoom } = this.state;
     if (images.length !== 0) {
       return (
         <div className="Carousel">
@@ -76,7 +76,7 @@ class Carousel extends React.Component {
             setSelectedImageIndex={this.setSelectedImageIndex}
             selectedImageIndex={selectedImageIndex}
           />
-          <MainImage main={images[selectedImageIndex].product_image} carouselLeft={this.carouselLeft} carouselRight={this.carouselRight} />
+          <MainImage main={images[selectedImageIndex].product_image} carouselLeft={this.carouselLeft} carouselRight={this.carouselRight} zoom={zoom} />
         </div>
       );
     } else {
