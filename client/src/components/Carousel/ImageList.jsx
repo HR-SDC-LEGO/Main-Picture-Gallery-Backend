@@ -89,7 +89,7 @@ class ImageList extends React.Component {
     return (
       <div className="ImageList">
 
-        <button type="button" onClick={this.carouselUp}>▲</button>
+        <button className="button" type="button" onClick={this.carouselUp}>▲</button>
         {
       rangeOfRenderingCarosel.map((item, index) => {
         const imageIndex = index + startingIndexForImageCarosel;
@@ -98,7 +98,7 @@ class ImageList extends React.Component {
         );
       })
         }
-        <button type="button" onClick={this.carouselDown}>▼</button>
+        <button className="button" type="button" onClick={this.carouselDown}>▼</button>
 
       </div>
     );
