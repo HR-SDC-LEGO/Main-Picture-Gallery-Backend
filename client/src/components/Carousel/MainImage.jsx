@@ -14,14 +14,14 @@ import ImageList from './ImageList';
 // eslint-disable-next-line object-curly-newline
 const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => {
   const alert = () => {
-
+    // on click call img zoom
   };
 
   return (
     <div className="MainImage">
 
       <div className="carouselRight">
-        <button type="button" onClick={carouselRight}>-----➤</button>
+        <button type="button" onClick={carouselRight}>ᐊ------</button>
       </div>
 
       <div className="MainImageZoom" id="MainImageZoom" onClick={alert}>
@@ -29,7 +29,7 @@ const MainImage = ({ main, changeMainPicture, carouselLeft, carouselRight }) => 
       </div>
 
       <div className="carouselLeft">
-        <button type="button" onClick={carouselLeft}>ᐊ-----</button>
+        <button type="button" onClick={carouselLeft}>-----➤</button>
       </div>
 
     </div>
