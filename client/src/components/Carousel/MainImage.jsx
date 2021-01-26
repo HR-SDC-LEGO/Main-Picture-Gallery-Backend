@@ -22,6 +22,14 @@ class MainImage extends React.Component {
     this.zoomMain = this.zoomMain.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.setState({
+        zoom: false,
+      });
+    }
+  }
+
   zoomMain() {
     const { zoom } = this.state;
     this.setState({
@@ -33,6 +41,7 @@ class MainImage extends React.Component {
     const { main, carouselLeft, carouselRight } = this.props;
     const { zoom } = this.state;
     let test = null;
+
     if (zoom === false) {
       test = <img src={main} alt="product" />;
     } else {
