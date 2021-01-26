@@ -12,7 +12,7 @@ app.use(express.static(path.resolve('client', 'dist')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/lego/products', (req, res) => {
+app.get('/api/lego/products', (req, res) => {
   getProducts(null, (err, data) => {
     if (err) {
       res.status(400).send(err);
@@ -22,7 +22,7 @@ app.get('/lego/products', (req, res) => {
   });
 });
 
-app.post('/lego/products/images', (req, res) => {
+app.post('/api/lego/products/images', (req, res) => {
   getImgs(req.body, (err, data) => {
     if (err) {
       res.status(400).send(err);

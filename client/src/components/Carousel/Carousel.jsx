@@ -31,7 +31,7 @@ class Carousel extends React.Component {
   getProductsList() {
     $.ajax({
       method: 'GET',
-      url: '/lego/products',
+      url: '/api/lego/products',
       success: (data) => {
         this.setState({ products: JSON.parse(data) });
       },
@@ -45,7 +45,7 @@ class Carousel extends React.Component {
     $.ajax({
       method: 'POST',
       data: JSON.stringify(query),
-      url: '/lego/products/images',
+      url: '/api/lego/products/images',
       success: (imagesData) => {
         this.setState({ images: imagesData });
       },
