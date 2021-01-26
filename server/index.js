@@ -6,7 +6,7 @@ const path = require('path');
 const { getProducts, getImgs } = require('../database/index.js');
 
 const app = express();
-const port = 3000;
+const port = 3053;
 
 app.use(express.static(path.resolve('client', 'dist')));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,5 +33,5 @@ app.post('/lego/products/images', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`http://localhost:${port}`);
 });
