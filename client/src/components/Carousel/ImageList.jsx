@@ -89,7 +89,10 @@ class ImageList extends React.Component {
     return (
       <div className="ImageList">
 
-        <button className="button" type="button" onClick={this.carouselUp}>▲</button>
+        <button className="buttonUp" type="button" onClick={this.carouselUp}>
+          <svg width="18px" height="28px" viewBox="0 0 18 28" aria-hidden="true"><path d="M1.825 28L18 14 1.825 0 0 1.715 14.196 14 0 26.285z" fill="currentColor" /></svg>
+        </button>
+
         {
       rangeOfRenderingCarosel.map((item, index) => {
         const imageIndex = index + startingIndexForImageCarosel;
@@ -98,7 +101,9 @@ class ImageList extends React.Component {
         );
       })
         }
-        <button className="button" type="button" onClick={this.carouselDown}>▼</button>
+        <button className="buttonDown" type="button" onClick={this.carouselDown}>
+          <svg width="18px" height="28px" viewBox="0 0 18 28" aria-hidden="true"><path d="M1.825 28L18 14 1.825 0 0 1.715 14.196 14 0 26.285z" fill="currentColor" /></svg>
+        </button>
 
       </div>
     );
