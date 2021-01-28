@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-update-set-state */
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-cycle */
@@ -49,23 +50,39 @@ class MainImage extends React.Component {
     }
 
     return (
-      <div className="MainImage">
+      <div className="imageBackground">
+        <div className="MainImage">
+          <div className="carouselRight">
+            <button className="button" type="button" onClick={carouselRight}>
+              <svg viewBox="0 0 40 40" width="2rem" aria-hidden="true" height="2rem">
+                <path d="M16.42 9L29 20 16.42 31 15 29.653 26.042 20 15 10.347z" />
+              </svg>
+            </button>
+          </div>
 
-        <div className="carouselRight">
-          <button className="button" type="button" onClick={carouselRight}>❮</button>
+          <div className="MainImageZoom" id="MainImageZoom" onClick={this.zoomMain}>
+            {test}
+          </div>
+
+          <div className="carouselLeft">
+            <button className="button" type="button" onClick={carouselLeft}>
+              <svg viewBox="0 0 40 40" width="2rem" aria-hidden="true" height="2rem">
+                <path d="M16.42 9L29 20 16.42 31 15 29.653 26.042 20 15 10.347z" />
+              </svg>
+            </button>
+          </div>
         </div>
-
-        <div className="MainImageZoom" id="MainImageZoom" onClick={this.zoomMain}>
-          {test}
-        </div>
-
-        <div className="carouselLeft">
-          <button className="button" type="button" onClick={carouselLeft}>❯</button>
-        </div>
-
       </div>
     );
   }
 }
+
+// <button data-test="mediaviewer-chevron-next" className="Chevrons__ChevronWrapper-ibq7e4-0 gvLhfg">
+//   <svg viewBox="0 0 40 40" aria-hidden="true" width="2rem" height="2rem">
+//     <g fill="none" fillRule="evenodd" data-darkreader-inline-fill="" style="--darkreader-inline-fill:none;">
+//       <rect opacity=".602" width="40" height="40" rx="20" className="ChevronRound__Rect-dhupzz-0 fWTElz" />
+//       <path d="M16.42 9L29 20 16.42 31 15 29.653 26.042 20 15 10.347z" />
+//   </svg>
+// </button>
 
 export default MainImage;
