@@ -22,6 +22,3 @@ for (let i = 1; i < 100; i += 1) {
     }
   });
 }
-
-// we need to generate the fake data, and but in in a obj
-// we then pass in the fake data into the db
