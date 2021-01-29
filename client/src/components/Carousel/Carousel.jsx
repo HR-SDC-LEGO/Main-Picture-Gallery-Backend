@@ -16,7 +16,6 @@ class Carousel extends React.Component {
       images: [],
       selectedImageIndex: 0,
     };
-
     this.getImages = this.getImages.bind(this);
     this.getProductsList = this.getProductsList.bind(this);
     this.setSelectedImageIndex = this.setSelectedImageIndex.bind(this);
@@ -56,7 +55,7 @@ class Carousel extends React.Component {
     this.setState({ selectedImageIndex: index });
   }
 
-  carouselRight() { // move up into main img
+  carouselRight() {
     const { selectedImageIndex } = this.state;
     this.setSelectedImageIndex(selectedImageIndex + 1);
   }

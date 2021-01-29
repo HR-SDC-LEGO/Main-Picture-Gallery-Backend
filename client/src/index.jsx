@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable eol-last */
 import React from 'react';
 import ReactDOM from 'react-dom';

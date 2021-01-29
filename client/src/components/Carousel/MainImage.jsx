@@ -13,7 +13,6 @@ import Zoom from 'react-img-zoom';
 import './MainImageS.scss';
 import ImageList from './ImageList';
 
-// eslint-disable-next-line object-curly-newline
 class MainImage extends React.Component {
   constructor(props) {
     super(props);
@@ -76,13 +75,5 @@ class MainImage extends React.Component {
     );
   }
 }
-
-// <button data-test="mediaviewer-chevron-next" className="Chevrons__ChevronWrapper-ibq7e4-0 gvLhfg">
-//   <svg viewBox="0 0 40 40" aria-hidden="true" width="2rem" height="2rem">
-//     <g fill="none" fillRule="evenodd" data-darkreader-inline-fill="" style="--darkreader-inline-fill:none;">
-//       <rect opacity=".602" width="40" height="40" rx="20" className="ChevronRound__Rect-dhupzz-0 fWTElz" />
-//       <path d="M16.42 9L29 20 16.42 31 15 29.653 26.042 20 15 10.347z" />
-//   </svg>
-// </button>
 
 export default MainImage;
