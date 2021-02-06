@@ -10,7 +10,7 @@ connection.connect((err) => {
     console.log('the connected to the database LEGO');
   }
 });
-//change
+
 const addProduct = (productName, callback) => {
   const insertQury = `INSERT INTO products (product_name) VALUES ("${productName}")`;
   connection.query(insertQury, (err, data) => {
