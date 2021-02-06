@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Client } = require('pg');
+const { getProducts, getImgs } = require('../database/SDC');
 
 const connectionString = 'postgres://postgres:postgres@localhost:5432/lego';
 
@@ -19,14 +20,23 @@ const client = new Client({
 
 client.connect();
 
-app.get('/', (req, res) => {
-  client.query('SELECT * FROM LEGO where id = 1', (err, result) => {
+app.get('/api/lego/products', (req, res) => {
+  getProducts(null, (err, data) => {
     if (err) {
-      console.log(err);
       res.status(400).send(err);
+    } else {
+      res.status(200).send(JSON.stringify(data));
     }
-    console.log(result.rows);
-    res.status(200).send(result.rows);
+  });
+});
+
+app.post('/api/lego/products/images', (req, res) => {
+  getImgs(req.body, (err, data) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(data);
+    }
   });
 });
 
