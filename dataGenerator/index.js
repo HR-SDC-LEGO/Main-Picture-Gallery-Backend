@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const faker = require('faker');
 const { addImg, addProduct } = require('../database/index.js');
 

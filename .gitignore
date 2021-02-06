@@ -1,6 +1,7 @@
 node_modules
 config.js
 client/dist/bundle.js
+database/key.js
 .DS_Store
 .AppleDouble
 .LSOverride
