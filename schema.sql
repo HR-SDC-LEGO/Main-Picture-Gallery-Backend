@@ -57,6 +57,9 @@ create Table products (
   PRIMARY KEY(product_id)
 );
 
+CREATE UNIQUE INDEX CONCURRENTLY ON products (product_id);
+CREATE UNIQUE INDEX CONCURRENTLY ON images (product_id);
+
 create table images (
   product_id INT,
   image_id SERIAL,

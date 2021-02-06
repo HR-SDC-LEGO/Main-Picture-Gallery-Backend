@@ -10,7 +10,7 @@ const faker = require('faker');
 
 const dataProducts = () => {
   writer.pipe(fs.createWriteStream('./CSV_files/Products.csv'));
-  for (let i = 0; i < 200; i += 1) {
+  for (let i = 0; i < 10000000; i += 1) {
     writer.write({
       product_name: faker.commerce.productName(),
     });
