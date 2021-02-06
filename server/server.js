@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 
 const express = require('express');
@@ -55,12 +56,12 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
 
-COPY images(product_image, product_id)
-FROM '/Users/sambrandon/Documents/SJO-3/FEC-lego-gallery/Main-Product-Gallery/CSV_files/dataImages.csv'
-DELIMITER ','
-CSV HEADER;
+// COPY images(product_image, product_id)
+// FROM '/Users/sambrandon/Documents/SJO-3/FEC-lego-gallery/Main-Product-Gallery/CSV_files/dataImages.csv'
+// DELIMITER ','
+// CSV HEADER;
 
-COPY products(product_name)
-FROM '/Users/sambrandon/Documents/SJO-3/FEC-lego-gallery/Main-Product-Gallery/CSV_files/Products.csv'
-DELIMITER ','
-CSV HEADER;
+// COPY products(product_name)
+// FROM '/Users/sambrandon/Documents/SJO-3/FEC-lego-gallery/Main-Product-Gallery/CSV_files/Products.csv'
+// DELIMITER ','
+// CSV HEADER;
