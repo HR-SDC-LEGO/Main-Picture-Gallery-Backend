@@ -14,6 +14,7 @@ const dataProducts = () => {
     writer.write({
       product_name: faker.commerce.productName(),
     });
+    console.log(i);
   }
   writer.end();
   console.log('done with names');

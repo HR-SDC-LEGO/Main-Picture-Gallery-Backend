@@ -7,15 +7,16 @@ const faker = require('faker');
 
 const fileGlobalArrPictures = [];
 
-const dataImages = (arr) => {
-  writer.pipe(fs.createWriteStream('./CSV_files/dataImages.csv'));
-  for (let i = 0; i < 100; i += 1) {
-    const random = Math.floor(Math.random() * 100);
-    const test = `{${arr[random]}}`;
+const dataImages = () => {
+  writer.pipe(fs.createWriteStream('./CSV_files/dataImages2.csv'));
+  for (let i = 5000000; i < 10000000; i += 1) {
+    const random = Math.floor(Math.random() * 10);
+    const test = `{${fileGlobalArrPictures[random]}}`;
     writer.write({
       product_image: test,
       product_id: i,
     });
+    console.log(i);
   }
 
   writer.end();
@@ -30,6 +31,6 @@ const test = () => {
     }
     fileGlobalArrPictures.push(temp);
   }
+  dataImages();
 };
-test()
-  .then(dataImages());
+test();
