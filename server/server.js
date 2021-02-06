@@ -2,9 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 const { Client } = require('pg');
-const fs = require('fs');
 
 const connectionString = 'postgres://postgres:postgres@localhost:5432/lego';
 

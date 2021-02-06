@@ -55,8 +55,8 @@ const getProducts = (qry, callback) => {
 };
 
 module.exports = {
-  addImg,
-  addProduct,
-  getProducts,
-  getImgs,
+  // addImg,
+  // addProduct,
+  // getProducts,
+  // getImgs,
 };
