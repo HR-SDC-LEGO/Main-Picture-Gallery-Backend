@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
 const { client } = require('./key');
 
-client.connect();
+client.connect()
+  .then(
+    () => { 'conected to the DB'; },
+  );
 
 // client.query('SELECT * FROM images where product_id = 1', (err, res) => {
 //   if (err) {
@@ -14,14 +17,14 @@ client.connect();
 
 const getImgs = (qry, callback) => {
   client.query('SELECT * FROM images WHERE product_id = 1', (err, data) => {
-    console.log('sam');
+    console.log('qry');
     if (err) {
       callback(err);
     } else {
       callback(null, data);
     }
   });
-  client.end();
+  // client.end();
 };
 
 const getProducts = (qry, callback) => {
@@ -32,7 +35,7 @@ const getProducts = (qry, callback) => {
       callback(null, data);
     }
   });
-  client.end();
+  // client.end();
 };
 
 module.exports = {
