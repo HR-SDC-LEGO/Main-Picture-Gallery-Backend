@@ -5,4 +5,6 @@ database/key.js
 .DS_Store
 .AppleDouble
 .LSOverride
-CSV_files
+CSV_files/Products.csv
+CSV_files/dataimages1.csv
+CSV_files/dataimages2.csv

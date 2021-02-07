@@ -41,7 +41,7 @@ create table images (
 --|
 -----------------------------------------------------------------------------------------------------------------------------------
 
--- drop database if Exists LEGO;
+drop database if Exists LEGO;
 
 create database LEGO;
 \c LEGO;
@@ -68,3 +68,14 @@ create table images (
 );
 
 
+COPY images(product_image, product_id)
+FROM '/Users/sambrandon/Documents/SJO-3/FEC-lego-gallery/Main-Product-Gallery/CSV_files/dataImages1.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY products(product_name)
+FROM '/Users/sambrandon/Documents/SJO-3/FEC-lego-gallery/Main-Product-Gallery/CSV_files/Products.csv'
+DELIMITER ','
+CSV HEADER;
+
+EXPLAIN ANALYZE SELECT * FROM products WHERE product_id = 500000;

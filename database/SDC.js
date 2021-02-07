@@ -42,5 +42,3 @@ module.exports = {
   getProducts,
   getImgs,
 };
-
-// EXPLAIN ANALYZE SELECT * FROM products WHERE product_id = 1;

@@ -10,7 +10,7 @@ const faker = require('faker');
 
 const dataProducts = () => {
   writer.pipe(fs.createWriteStream('./CSV_files/Products.csv'));
-  for (let i = 0; i < 10000000; i += 1) {
+  for (let i = -1; i < 10000000; i += 1) {
     writer.write({
       product_name: faker.commerce.productName(),
     });
@@ -20,8 +20,3 @@ const dataProducts = () => {
   console.log('done with names');
 };
 dataProducts();
-
-// COPY products(product_name)
-// FROM '/Users/sambrandon/Documents/SJO-3/PostGres Testing/Testing/dataProducts.csv'
-// DELIMITER ','
-// CSV HEADER;
