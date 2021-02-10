@@ -10,3 +10,4 @@ CSV_files/dataimages1.csv
 CSV_files/dataimages2.csv
 CSV_files
 newrelic.js
+newrelic_agent.log

@@ -32,9 +32,7 @@ class Carousel extends React.Component {
       method: 'GET',
       url: '/api/lego/products',
       success: (data) => {
-        console.log(JSON.parse(data));
-        console.log(data.fields);
-        this.setState({ products: data.rows }); // error here
+        this.setState({ products: data }); // error here
       },
       complete: () => {
         this.getImages();

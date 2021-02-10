@@ -1,6 +1,8 @@
+/* eslint-disable spaced-comment */
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Client } = require('pg');
@@ -36,7 +38,7 @@ app.get('/api/lego/products', (req, res) => {
       res.status(400).send(err);
     } else {
       console.log(data, 'data in products');
-      res.status(200).send(JSON.stringify(data));
+      res.status(200).send(data.rows);
     }
   });
 });
@@ -47,7 +49,7 @@ app.post('/api/lego/products/images', (req, res) => {
       res.status(400).send(err);
     } else {
       //console.log(data);
-      res.status(200).send(data);
+      res.status(200).send(data.rows);
     }
   });
 });

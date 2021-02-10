@@ -16,7 +16,7 @@ client.connect()
 // });
 
 const getImgs = (qry, callback) => {
-  client.query('SELECT * FROM images WHERE product_id = 1', (err, data) => {
+  client.query('SELECT product_images FROM images WHERE product_id = 1', (err, data) => {
     console.log('qry');
     if (err) {
       callback(err);
