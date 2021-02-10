@@ -28,7 +28,7 @@ const getImgs = (qry, callback) => {
 };
 
 const getProducts = (qry, callback) => {
-  client.query('SELECT * FROM products WHERE product_id = 1', (err, data) => {
+  client.query('SELECT * FROM products WHERE product_id = 8000000', (err, data) => {
     if (err) {
       callback(err);
     } else {
