@@ -37,7 +37,7 @@ app.get('/api/lego/products', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      console.log(data, 'data in products');
+      // console.log(data, 'data in products');
       res.status(200).send(data.rows);
     }
   });
