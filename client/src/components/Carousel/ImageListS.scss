@@ -1,0 +1,33 @@
+.ImageList{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-align: center;
+  border: lightgray;
+  cursor: pointer;
+
+  .buttonUp {
+    // background-color: gray;
+    padding-left: 43%;
+    padding-right: 40%;
+    justify-self: center;
+    outline: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #2c2c2c;
+    opacity: 0.75;
+    transform: rotate(270deg);
+  }
+  .buttonDown {
+    padding-left: 53%;
+    padding-right: 50%;
+    justify-self: center;
+    outline: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #2c2c2c;
+    opacity: 0.75;
+    transform: rotate(90deg);
+  }
+
+}

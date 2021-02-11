@@ -5,3 +5,4 @@
 **/*.min.js
 **/dbKey.js
 **/package-lock.json
+**/client/dist/bundle.js

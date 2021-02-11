@@ -1,0 +1,12 @@
+.ImageListItem {
+  margin: 5px 0;
+  border: 1px solid lightgray;
+  &.active {
+    border: 2px solid blue;
+  }
+
+  img {
+    object-fit: contain;
+    height: 50px; /*might be a better solution? */
+  }
+}

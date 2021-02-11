@@ -1,7 +1,25 @@
+/* eslint-disable no-console */
 const faker = require('faker');
+const { addImg, addProduct } = require('../database/index.js');
 
-const randomName = faker.name.findName(); // Rowan Nikolaus
-const randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
-const randomCard = faker.helpers.createCard();
+for (let i = 1; i < 100; i += 1) {
+  const productName = faker.commerce.productName();
 
-
+  addProduct(productName, (err, productData) => {
+    if (err) {
+      console.log(err);
+    } else {
+      const id = productData.insertId;
+      const number = Math.floor(Math.random() * 10);
+      for (let imgs = 0; imgs < number; imgs += 1) {
+        const pictureID = Math.floor(Math.random() * 10000000);
+        const productImage = faker.image.cats();
+        addImg(productImage, id, pictureID, (error) => {
+          if (error) {
+            console.log(error);
+          }
+        });
+      }
+    }
+  });
+}

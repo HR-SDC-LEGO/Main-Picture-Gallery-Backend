@@ -1,6 +1,8 @@
-/* eslint-disable import/extensions */
+/* eslint-disable max-len */
+/* eslint-disable eol-last */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import App from './components/App/App';
+import './indexS.scss';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('root'));

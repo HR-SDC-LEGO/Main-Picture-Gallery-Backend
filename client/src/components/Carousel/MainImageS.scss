@@ -1,0 +1,64 @@
+.imageBackground {
+  background: white;
+  padding: 2%;
+  border: 10px solid #f9f9f9;
+
+  .MainImage {
+    display: flex;
+    height: 8rem;
+    width: auto;
+
+    .MainImageZoom {
+      height: 8rem;
+      width: auto;
+      cursor: zoom-in;
+    }
+
+    img {
+      object-fit: contain;
+      padding: .1rem;
+      vertical-align: middle;
+      justify-content: center;
+      height: auto;
+      width: 100%;
+    }
+
+    .carouselRight {
+      padding-top: 250px;
+      margin: 3px;
+      border-radius: 50%;
+      opacity: 60%;
+      cursor: pointer;
+      .button {
+        background-color: gray;
+        border-radius: 50%;
+        width: 30px;
+        height: auto;
+        width: 30px;
+        padding: 12px 0;
+        color: #2c2c2c;
+        opacity: 0.75;
+        transform: rotate(180deg);
+        outline: none;
+      }
+    }
+
+    .carouselLeft {
+      padding-top: 250px;
+      margin: 3px;
+      border-radius: 50%;
+      opacity: 60%;
+      cursor: pointer;
+      .button {
+        background-color: gray;
+        border-radius: 50%;
+        width: 30px;
+        height: auto;
+        width: 30px;
+        padding: 12px 0;
+        outline: none;
+      }
+    }
+
+  }
+}
